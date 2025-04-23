@@ -2,16 +2,6 @@
   "Monday": [
     {
       "course": "DSA 210-A",
-      "time": "10:40 am - 11:30 am",
-      "location": "FENS G077"
-    },
-    {
-      "course": "MATH 102-B",
-      "time": "11:40 am - 12:30 pm",
-      "location": "FMAN G071"
-    },
-    {
-      "course": "DSA 210-A",
       "time": "12:40 pm - 2:30 pm",
       "location": "FASS G062"
     },
@@ -33,8 +23,18 @@
   ],
   "Tuesday": [
     {
+      "course": "MATH 102-B",
+      "time": "11:40 am - 12:30 pm",
+      "location": "FMAN G071"
+    },
+    {
       "course": "HUM 201-0",
       "time": "12:40 pm - 2:30 pm",
+      "location": "FASS G062"
+    },
+    {
+      "course": "CS 204-B",
+      "time": "3:40 Pm - 5:30 pm",
       "location": "FASS G062"
     }
   ],
@@ -45,31 +45,33 @@
       "location": "UC G030"
     },
     {
-      "course": "MATH 306-B",
-      "time": "10:40 am - 12:30 pm",
-      "location": "UC G030"
+      "course": "DSA 210-A",
+      "time": "10:40 am - 11:30 Am",
+      "location": "FENS G077"
     },
     {
       "course": "MATH 306-B",
       "time": "2:40 pm - 3:30 pm",
       "location": "UC G030"
-    },
-    {
-      "course": "CS 204-B",
-      "time": "3:40 pm - 5:30 pm",
-      "location": "FASS G062"
     }
   ],
   "Thursday": [
     {
-      "course": "MATH 102R-B7",
+      "course": "MATH 306-B",
       "time": "10:40 am - 12:30 pm",
-      "location": "FASS 1102"
+      "location": "UC G030"
     },
     {
       "course": "HUM 201D-C2",
       "time": "2:40 pm - 3:30 pm",
       "location": "FASS 2023"
+    }
+  ],
+  "Friday": [
+    {
+      "course": "MATH 102R-B7",
+      "time": "10:40 am - 12:30 pm",
+      "location": "FASS 1102"
     },
     {
       "course": "CS 204L-C1",
@@ -83,4 +85,3 @@
     }
   ]
 }
-
