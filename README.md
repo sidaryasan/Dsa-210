@@ -9,8 +9,8 @@ Since I started attending classes at Sabancı University, I think my **calorie b
 I'll be using my own fitness data collected through the Health app on my **smartphone and smartwatch**, which records various health metrics daily. For this project, I will focus on:
 - **Active energy burned (calories)**
 - **Sleep activity (duration and quality)**
-
-The data will be exported in **XML format**. I will process and filter the data to extract relevant records and match these records with my **lecture schedule**, which I extracted from the university’s academic calendar.
+- **Heart Rate**
+The data will be exported in **XML format**.I changed format to **.txt**. I will process and filter the data to extract relevant records and match these records with my **lecture schedule(.json)**, which I extracted from the university’s academic calendar.
 
 ---
 
@@ -20,10 +20,10 @@ The data will be exported in **XML format**. I will process and filter the data 
 I'll export my health data into structured formats and clean it by aligning each day's calorie and sleep records with my lecture schedule, covering the period from **September 2024 to April 2025**.
 
 ### 📊 Exploratory Data Analysis (EDA)
-I'll use visuals like **histograms**, **boxplots**, and **time series charts** to examine how daily **calorie burn** and **sleep duration/quality** differ between lecture and non-lecture days.
+I'll use visuals like **histograms**, **boxplots**, and **time series charts** to examine how daily **calorie burn**, **heart rates** and **sleep duration/quality** differ between lecture and non-lecture days.
 
 ### 🧪 Hypothesis Testing
-I'll perform **t-tests** to determine whether the differences in **calories burned** and **sleep quality** between lecture days and non-lecture days are statistically significant.
+I'll perform **t-tests** to determine whether the differences in **calorie burn**, **heart rates** and **sleep duration/quality** between lecture days and non-lecture days are statistically significant.
 
 
 ---
