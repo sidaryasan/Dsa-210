@@ -1,60 +1,51 @@
-# 📊 Project Title: How Do Lecture Days Affect My Daily Physical Activity?
+# 📊 Analysis of Calorie Burn and Sleep Quality on Lecture Days
 
 ## 🧠 Motivation
-Since I began attending classes at Sabancı University, I have observed that my daily activity levels vary depending on whether I have lectures. On days with classes, I commute to campus, walk between buildings, and generally move more. This project aims to explore how my academic schedule influences my physical activity by analyzing my personal health data.
+Since I started attending classes at Sabancı University, I think my **calorie burn increases** and my **sleep patterns are affected** on lecture days because I commute to campus and follow a more structured schedule. This project is my way of investigating how much my class schedule actually affects my daily **physical activity and recovery** by analyzing the data I collect.
 
 ---
 
 ## 📦 Data Source
-I will use my own fitness data, collected through the Health app on my **smartphone** and **smartwatch**. The dataset includes various metrics such as:
-
+I'll be using my own fitness data collected through the Health app on my **smartphone and smartwatch**, which records various health metrics daily. For this project, I will focus on:
 - **Active energy burned (calories)**
-- **Sleep activity**
-- **Heart rate**
-- And more
+- **Sleep activity (duration and quality)**
 
-For this project, I will primarily focus on **active energy burned** as an indicator of daily activity.
-
-The data is exported in **XML format** and processed to extract relevant records. These records are then **cross-referenced with my lecture schedule**, which I manually extracted from the university academic calendar and formatted into structured JSON.
+The data will be exported in **XML format**. I will process and filter the data to extract relevant records and match these records with my **lecture schedule**, which I extracted from the university’s academic calendar.
 
 ---
 
 ## 🔬 Data Analysis
 
-To investigate the relationship between lecture days and activity, I will follow these steps:
+### 📥 Data Collection and Cleaning
+I'll export my health data into structured formats and clean it by aligning each day's calorie and sleep records with my lecture schedule, covering the period from **September 2024 to April 2025**.
 
-### 1. Data Collection and Cleaning
-- Filter the activity data to cover the period between **September 2024 and April 2025**.
-- Label each date as either a **lecture day** or **non-lecture day** based on my course schedule.
+### 📊 Exploratory Data Analysis (EDA)
+I'll use visuals like **histograms**, **boxplots**, and **time series charts** to examine how daily **calorie burn** and **sleep duration/quality** differ between lecture and non-lecture days.
 
-### 2. Exploratory Data Analysis (EDA)
-- Use visualization tools such as **histograms**, **boxplots**, and **time series plots** to examine how daily activity levels (in calories burned) differ between lecture and non-lecture days.
+### 🧪 Hypothesis Testing
+I'll perform **t-tests** to determine whether the differences in **calories burned** and **sleep quality** between lecture days and non-lecture days are statistically significant.
 
-### 3. Hypothesis Testing
-- Perform statistical analysis using a **t-test** to evaluate whether the difference in calorie burn between lecture and non-lecture days is statistically significant.
-
-### 4. Machine Learning
-- Attempt to build a basic **classification model** (e.g., logistic regression or decision tree) to predict whether a day was a lecture day using only activity metrics like calorie burn.
 
 ---
 
 ## 🔍 Findings
 
-This project will help answer the following questions:
+From this project, I want to find out:
 
 - Do I burn significantly more calories on days I have lectures?
-- Is there a clear distributional difference in daily activity between lecture and non-lecture days?
-- How strongly does my class schedule influence my physical movement?
-- Can activity data alone predict whether I had classes?
+- Is there a noticeable difference in my sleep duration or quality between lecture and non-lecture days?
+- How strongly does my class schedule influence my daily physical recovery and activity?
+- Can health data like calories burned and sleep quality be used to accurately predict lecture days?
 
 ---
 
 ## ⚠️ Limitations and 🔮 Future Work
 
 ### Limitations
-- The data comes from **two devices (smartphone and smartwatch)** and may contain measurement errors.
-- The study does not currently factor in **external variables** such as weather, academic workload, or emotional stress.
+My data is limited by the accuracy of the smartphone and smartwatch sensors, the relatively short time period of data collection, and the lack of contextual variables like weather, stress, or external activities.
 
 ### Future Work
-- Expand the dataset to cover **multiple academic terms** for stronger generalization.
-- Incorporate additional activity metrics (e.g., **steps**, **heart rate**
+In future studies, I’d like to:
+- Collect data over a longer period
+- Integrate more metrics (e.g., heart rate, mood, steps)
+- Explore correlations between academic stress and recovery metrics such as sleep
