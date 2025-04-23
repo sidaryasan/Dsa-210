@@ -1,79 +1,41 @@
-# 📊 How Do Lecture Days Affect My Daily Physical Activity?
+Project Title: How Do Lecture Days Affect My Daily Physical Activity?
+Motivation
+Since I began attending classes at Sabancı University, I have observed that my daily activity levels vary depending on whether I have lectures. On days with classes, I commute to campus, walk between buildings, and generally move more. This project aims to explore how my academic schedule influences my physical activity by analyzing my personal health data.
 
-## 🧠 Motivation
-Since I began attending classes at Sabancı University, I’ve noticed that my physical activity tends to fluctuate depending on whether I have lectures that day. This project explores **how lecture days influence my overall daily activity**, with a focus on **sleep patterns** as a measurable output of physical demand and routine disruption. The idea is to see if attending classes significantly impacts how much I rest and recover.
+Data Source
+I will use my own fitness data, collected through the Health app on my smartphone and smartwatch. The dataset includes various metrics such as active energy burned (calories), sleep activity, heart rate, and more. For this project, I will primarily focus on active energy burned as an indicator of daily activity.
+The data will be exported in XML format and processed to extract relevant records. I will cross-reference these with my lecture schedule, which I extracted from the university academic portal.
 
----
+Data Analysis
+To investigate the relationship between lecture days and activity, I will follow these steps:
 
-## 📦 Data Source
+Data Collection and Cleaning
+I will filter my activity data to cover the period between September 2024 and April 2025. Each date will be labeled as either a lecture day or non-lecture day based on my course schedule.
 
-The data used in this project comes from two personal devices:
-- **Smartphone**: Collecting general health and lifestyle metrics
-- **Smartwatch**: Providing more precise and continuous sleep tracking data
+Exploratory Data Analysis (EDA)
+I will use visual tools such as histograms, boxplots, and time series plots to explore how daily activity (in terms of calories burned) changes between lecture and non-lecture days.
 
-Data is exported from the Apple Health app in XML format and processed using custom-built tools. I extracted **sleep activity data** (`HKCategoryTypeIdentifierSleepAnalysis`) and aligned it with my **lecture schedule**, retrieved from the university's academic calendar.
+Hypothesis Testing
+To assess whether the differences are statistically significant, I will apply a t-test comparing calorie values on lecture days vs. non-lecture days.
 
----
+Machine Learning
+I will attempt to build a basic classifier (e.g., logistic regression or decision tree) to predict whether a day was a lecture day using only activity metrics like calorie burn.
 
-## 🧪 Data Analysis
+Findings
+This project will help answer the following:
 
-The following steps are applied to examine the relationship between lecture days and sleep activity:
+Do I burn significantly more calories on days I have lectures?
 
-### 🔹 Data Collection & Cleaning
-- Filtered and parsed the XML export from Apple Health to extract daily sleep data
-- Converted class schedule (from university portal) into structured JSON
-- Mapped each date as either a **"lecture day"** or **"non-lecture day"**
+Is there a clear distributional difference in daily activity between lecture and non-lecture days?
 
-### 🔹 Exploratory Data Analysis (EDA)
-- Created **histograms**, **boxplots**, and **line plots** to observe trends in sleep duration
-- Compared general sleep patterns between days with and without lectures
+How strongly does my class schedule influence my physical movement?
 
-### 🔹 Hypothesis Testing
-- Applied **independent t-tests** to assess whether the differences in average sleep durations between lecture and non-lecture days are statistically significant
+Can activity data alone predict whether I had classes?
 
-### 🔹 Machine Learning (To Be Implemented)
-- Planned implementation of a classification model (e.g., logistic regression) to predict whether a day is a lecture day based on sleep data alone
+Limitations and Future Work
+Limitations:
+The data comes from a 2 devices and may have measurement errors. The study doesn’t currently factor in external variables like weather or exam stress.
 
----
+Future Work:
+I plan to expand the dataset over a longer time frame, incorporate additional activity metrics (e.g., steps, heart rate, sleep), and possibly include qualitative logs like mood or energy level for richer context.
 
-## 📈 Key Questions
-
-- Do I sleep less or more on days I attend university lectures?
-- Is there a measurable difference in the **quality or quantity** of sleep between these two types of days?
-- Can sleep data be used to **predict academic workload or physical demands**?
-- Does attending classes disrupt or improve my overall rest pattern?
-
----
-
-## 🚧 Limitations and Future Work
-
-### ⚠️ Limitations
-- Sleep data accuracy can vary between smartphone and smartwatch sensors
-- The observation window is limited to September 2024 – April 2025
-- No external factors (e.g., exam weeks, health conditions) are currently factored in
-
-### 🔮 Future Work
-- Include longer-term data across multiple semesters
-- Incorporate additional metrics like **calories burned**, **heart rate**, and **mood tracking**
-- Investigate correlations between academic stress and sleep quality
-
----
-
-## 🧰 Tech Stack
-
-- **Language**: Python (required)
-- **Libraries**: pandas, matplotlib, scipy
-- **IDE**: Jupyter Notebook / VS Code / PyCharm
-- **Data Format**: Apple Health XML → parsed to CSV / DataFrame
-
----
-
-## 📝 Submission Info
-
-- All code and analysis will be submitted via GitHub as per course requirements
-- A `requirements.txt` file and detailed documentation will be included
-- Regular commits will be made to document project progress
-
----
-
-> This project is conducted as part of the **DSA 210: Introduction to Data Science** course at Sabancı University – 2024-2025 Spring Term.
