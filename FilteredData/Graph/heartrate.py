@@ -2,7 +2,7 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 
-# 1. Kalp atış verisini saat bazında çıkaran fonksiyon
+# 1. Function to extract hourly heart rate values from Apple Health export
 def extract_heart_rate_by_hour(filepath):
     records = []
     with open(filepath, "r", encoding="utf-8") as f:
@@ -14,23 +14,23 @@ def extract_heart_rate_by_hour(filepath):
             if time_match and value_match:
                 timestamp = pd.to_datetime(time_match.group(1))
                 hour = timestamp.hour
-                if 8 <= hour < 20:  # sadece 08:00–20:00 arası
-                    bpm = float(value_match.group(1))
+                if 8 <= hour < 20:  # filter only 08:00–20:00
+                    bpm = float(value_match.group(1))  # beats per minute
                     records.append((hour, bpm))
     return pd.DataFrame(records, columns=["hour", "bpm"])
 
-# 2. Veriyi yükle ve ortalamaları hesapla
-df = extract_heart_rate_by_hour("HKQuantityTypeIdentifierHeartRate.txt")  # ← dosya adını gerektiği gibi değiştir
+# 2. Load the data and calculate average BPM per hour
+df = extract_heart_rate_by_hour("HKQuantityTypeIdentifierHeartRate.txt")  # adjust file path if needed
 hourly_avg = df.groupby("hour")["bpm"].mean()
 
-# 3. Çizgi grafiği oluştur
+# 3. Plot the line graph
 plt.figure(figsize=(10, 5))
 plt.plot(hourly_avg.index, hourly_avg.values, marker="o", color="crimson", linewidth=2)
 plt.title("Average Heart Rate by Hour (08:00–20:00)")
 plt.xlabel("Hour of the Day")
 plt.ylabel("Average Heart Rate (BPM)")
-plt.xticks(range(8, 21))
+plt.xticks(range(8, 21))  # ticks for 08:00 to 20:00
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
-plt.savefig("heart_rate_by_hour_line.png", dpi=300)
+plt.savefig("heart_rate_by_hour_line.png", dpi=300)  # save to file
 plt.show()
