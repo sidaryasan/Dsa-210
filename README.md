@@ -24,7 +24,7 @@ I'll use visuals like **histograms**, **boxplots**, and **time series charts** t
 
 ### 🧪 Hypothesis Testing: Calorie Burn on Lecture Days
 
-To understand whether attending lectures affects my physical activity, I performed a hypothesis test comparing **daily active calories burned on lecture days** versus **non-lecture days**.[here](./HypothesisTesting/hypo.py)
+To understand whether attending lectures affects my physical activity, I performed a hypothesis test comparing **daily active calories burned on lecture days** versus **non-lecture days** [here].(./Hypothesis_Testing/hypo.py)
 
 #### 🧬 Test Method
 - **Test Type**: Welch’s t-test (independent samples with unequal variances)
