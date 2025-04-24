@@ -22,9 +22,14 @@ I'll export my health data into structured formats and clean it by aligning each
 ### 📊 Exploratory Data Analysis (EDA)
 I'll use visuals like **histograms**, **boxplots**, and **time series charts** to examine how daily **calorie burn**, **heart rates** and **sleep duration/quality** differ between lecture and non-lecture days.
 
-### 🧪 Hypothesis Testing
-I'll perform **t-tests** to determine whether the differences in **calorie burn**, **heart rates** and **sleep duration/quality** between lecture days and non-lecture days are statistically significant.
+### 🧪 Hypothesis Testing: Calorie Burn on Lecture Days
 
+To understand whether attending lectures affects my physical activity, I performed a hypothesis test comparing **daily active calories burned on lecture days** versus **non-lecture days**.
+
+#### 🧬 Test Method
+- **Test Type**: Welch’s t-test (independent samples with unequal variances)
+- **Metric**: Total active energy burned per day
+- **Grouping**: Days are categorized as either *Lecture Day* or *Non-Lecture Day* based on my weekly academic schedule.
 
 ---
 
