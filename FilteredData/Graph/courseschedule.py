@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-# --- 1. JSON VERİSİ (direkt kodun içinde tanımlanmış) ---
+# --- 1. Hardcoded JSON SCHEDULE (defined directly in code) ---
 schedule = {
     "Monday": [
         {"course": "DSA 210-A", "time": "12:40 pm - 2:30 pm", "location": "FASS G062"},
@@ -11,11 +11,11 @@ schedule = {
     "Tuesday": [
         {"course": "MATH 102-B", "time": "11:40 am - 12:30 pm", "location": "FMAN G071"},
         {"course": "HUM 201-0", "time": "12:40 pm - 2:30 pm", "location": "FASS G062"},
-        {"course": "CS 204-B", "time": "3:40 Pm - 5:30 pm", "location": "FASS G062"}
+        {"course": "CS 204-B", "time": "3:40 pm - 5:30 pm", "location": "FASS G062"}
     ],
     "Wednesday": [
         {"course": "CS 204-B", "time": "9:40 am - 10:30 am", "location": "UC G030"},
-        {"course": "DSA 210-A", "time": "10:40 am - 11:30 Am", "location": "FENS G077"},
+        {"course": "DSA 210-A", "time": "10:40 am - 11:30 am", "location": "FENS G077"},
         {"course": "MATH 306-B", "time": "2:40 pm - 3:30 pm", "location": "UC G030"}
     ],
     "Thursday": [
@@ -29,14 +29,14 @@ schedule = {
     ]
 }
 
-# --- 2. Gün başına ders sayısı çıkar ---
+# --- 2. Count number of courses per day ---
 course_counts = {day: len(schedule[day]) for day in schedule}
 
-# --- 3. Günleri haftalık sıraya diz ---
+# --- 3. Order days in calendar sequence ---
 ordered_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 ordered_counts = {day: course_counts.get(day, 0) for day in ordered_days}
 
-# --- 4. Bar grafiğini çiz ---
+# --- 4. Draw the bar chart ---
 plt.figure(figsize=(8, 5))
 plt.bar(ordered_counts.keys(), ordered_counts.values(), color="steelblue")
 plt.title("📚 Number of Courses per Day")
