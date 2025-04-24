@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-# --- Veriyi oku ve işle ---
+# --- 1. Read and process calorie data from Apple Health export ---
 def extract_calories(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         records = []
@@ -16,18 +16,19 @@ def extract_calories(filepath):
                 records.append((date, value))
         return pd.DataFrame(records, columns=["date", "calories"])
 
+# --- 2. Load the data and compute daily totals ---
 df = extract_calories("HKQuantityTypeIdentifierActiveEnergyBurned.txt")
 df = df.groupby("date").sum().reset_index()
 df["weekday"] = df["date"].dt.day_name()
 
-# --- Ortalama kalori değerlerini hesapla ---
+# --- 3. Calculate average calories burned for each weekday ---
 weekly_avg = df.groupby("weekday")["calories"].mean()
 
-# --- Haftanın günlerini sıralı hale getir ---
+# --- 4. Ensure weekdays are in calendar order ---
 ordered_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 weekly_avg = weekly_avg.reindex(ordered_days)
 
-# --- Bar grafiğini çiz ---
+# --- 5. Plot the bar chart ---
 plt.figure(figsize=(8, 5))
 weekly_avg.plot(kind="bar", color="mediumturquoise")
 plt.title("Average Calories Burned by Day of the Week")
