@@ -1,56 +1,87 @@
-# 📊 Analysis of Calorie Burn and Sleep Quality on Lecture Days
+# 📊 Analysis of Step Count and Sleep Duration Patterns
 
 ## 🧠 Motivation
-Since I started attending classes at Sabancı University, I think my **calorie burn increases** and my **sleep patterns are affected** on lecture days because I commute to campus and follow a more structured schedule. This project is my way of investigating how much my class schedule actually affects my daily **physical activity and recovery** by analyzing the data I collect.
-
----
+I wanted to investigate how my physical activity (measured by step count) correlates with my sleep patterns, and whether there are predictable patterns in my weekly activity levels. This project analyzes my health data to better understand the relationship between daily activity and sleep habits.
 
 ## 📦 Data Source
-I'll be using my own fitness data collected through the Health app on my **smartphone and smartwatch**, which records various health metrics daily. For this project, I will focus on:
-- **Active energy burned (calories)**
-- **Sleep activity (duration and quality)**
-- **Heart Rate**
-The data will be exported in **XML format**.I changed format to **.txt**. I will process and filter the data to extract relevant records and match these records with my **lecture schedule(.json)**, which I extracted from the university’s academic calendar.
+I used my own fitness data collected through the Health app on my smartphone and smartwatch, which records various health metrics daily. For this project, I focused on:
+- **Daily step count**
+- **Sleep duration**
+- **Bedtime hours**
 
----
+The data was exported in XML format and processed to extract relevant metrics.
 
 ## 🔬 Data Analysis
 
-### 📥 Data Collection and Cleaning
-I'll export my health data into structured formats and clean it by aligning each day's calorie and sleep records with my lecture schedule, covering the period from **September 2024 to April 2025**.
+### 📥 Data Preparation
+I exported my health data and converted it to a structured format for analysis. The process involved:
+1. Extracting records from Apple Health export.xml
+2. Creating daily summaries for step count and sleep duration
+3. Merging these datasets for combined analysis
 
 ### 📊 Exploratory Data Analysis (EDA)
-I'll use visuals like **histograms**, **boxplots**, and **time series charts** to examine how daily **calorie burn**, **heart rates** and **sleep duration/quality** differ between lecture and non-lecture days.
+I created various visualizations to explore:
+- Daily step count patterns
+- Sleep duration distribution
+- Day of week comparisons
+- Monthly trends
 
-### 🧪 Hypothesis Testing: Calorie Burn on Lecture Days
+### 🧪 Hypothesis Testing
+I conducted three main hypothesis tests:
 
-To understand whether attending lectures affects my physical activity, I performed a hypothesis test comparing **daily active calories burned on lecture days** versus **non-lecture days** [here](./Hypothesis_Testing/hypo.py)
+1. **Step Count vs. Sleep Duration**
+  - Tested for correlation between daily step count and sleep duration
+  - Used Pearson correlation analysis
 
-#### 🧬 Test Method
-- **Test Type**: Welch’s t-test (independent samples with unequal variances)
-- **Metric**: Total active energy burned per day
-- **Grouping**: Days are categorized as either *Lecture Day* or *Non-Lecture Day* based on my weekly academic schedule.
+2. **Day of Week Effect on Step Count**
+  - Tested whether certain days of the week show different activity levels
+  - Used ANOVA to compare step counts across days
 
----
+3. **Bedtime Impact on Next Day's Activity**
+  - Attempted to analyze whether bedtime affects next day's step count
+  - Used correlation analysis to test this relationship
 
-## 🔍 Findings
+### 🤖 Machine Learning Analysis
+I applied two basic machine learning models to further explore patterns:
 
-From this project, I want to find out:
+1. **Random Forest**: Predicting sleep duration from step count
+  - R² Score: -0.03
+  - RMSE: 1.15 hours
 
-- Do I burn significantly more calories on days I have lectures?
-- Is there a noticeable difference in my sleep duration or quality between lecture and non-lecture days?
-- How strongly does my class schedule influence my daily physical recovery and activity?
-- Can health data like calories burned and sleep quality be used to accurately predict lecture days?
+2. **Decision Tree**: Analyzing day of week patterns in step count
+  - R² Score: -0.02
+  - RMSE: 3733.78 steps
 
----
+## 🔍 Key Findings
+
+1. **Steps & Sleep Relationship**:
+  - No significant correlation was found between daily step count and sleep duration
+  - The machine learning model confirmed this with a negative R² score, indicating step count is not a useful predictor for sleep duration
+
+2. **Weekly Activity Patterns**:
+  - No consistent pattern in step count across different days of the week
+  - The Decision Tree model failed to find predictable patterns based on day of week
+
+3. **Bedtime Impact Analysis**:
+  - No significant correlation was found between bedtime hour and next day's step count
+  - This suggests that sleep timing does not significantly influence next day's activity level
+
+Unlike my original plan that focused on lecture days versus non-lecture days and calorie burn, this analysis took a broader approach to explore general patterns in my health data without specific context to academic schedules.
 
 ## ⚠️ Limitations and 🔮 Future Work
 
 ### Limitations
-My data is limited by the accuracy of the smartphone and smartwatch sensors, the relatively short time period of data collection, and the lack of contextual variables like weather, stress, or external activities.
+- Limited health metrics - analysis focused mainly on step count rather than comprehensive activity metrics like calorie burn
+- Missing contextual information (weather, events, stress levels)
+- Inconsistent bedtime data limited certain analyses
+- Relatively short time period of data collection
 
 ### Future Work
-In future studies, I’d like to:
-- Collect data over a longer period
-- Integrate more metrics (e.g., heart rate, mood, steps)
-- Explore correlations between academic stress and recovery metrics such as sleep
+For future analysis, I would like to:
+- Collect more consistent bedtime and sleep quality data
+- Track additional metrics (heart rate, stress levels, calorie burn)
+- Include contextual data (lecture days, weather, mood)
+- Apply more advanced time series analysis methods
+- Investigate specific periods (exam weeks, holidays) for pattern changes
+
+As initially planned in my previous approach, I still hope to eventually analyze the impact of academic schedules on my health patterns when more comprehensive data becomes available.
